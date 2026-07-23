@@ -1666,11 +1666,11 @@ return;
 }
 
 
+await updateDoc(doc(db, "seats", selectedSeat), {
+    booked: true
+});
 
-showMessage(
-"✅ Booking Confirmed! Seat "+selectedSeat+
-" reserved for "+name
-);
+showMessage("Seat " + selectedSeat + " booked successfully!");
 
 
 
