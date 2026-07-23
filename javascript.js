@@ -28,9 +28,18 @@ onSnapshot(collection(db, "seats"), (snapshot) => {
 
             if (seat.innerText.trim() === seatId) {
 
-                if (data.booked === true) {
-                    seat.classList.add("booked");
-                    seat.disabled = true;
+                if (data.booked) {
+    seat.classList.add("booked");
+    seat.disabled = true;
+
+    if (data.name) {
+        seat.title = "Booked by: " + data.name;
+    }
+} else {
+    seat.classList.remove("booked");
+    seat.disabled = false;
+    seat.title = "";
+}
 
                     if (seat.classList.contains("selected")) {
                         seat.classList.remove("selected");
