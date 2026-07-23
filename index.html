@@ -1924,5 +1924,175 @@ popup.remove();
 
 </script>
 
+
+
+
+
+
+
+
+
+
+
+<script type="module">
+
+import { db } from "./firebase.js";
+
+import { 
+collection,
+doc,
+getDocs,
+updateDoc,
+onSnapshot
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+
+let selectedSeat = null;
+
+const seats = document.querySelectorAll(".seat");
+
+const seatText = document.getElementById("selectedSeat");
+
+
+// LOAD SEAT STATUS FROM FIREBASE
+
+onSnapshot(collection(db,"seats"),(snapshot)=>{
+
+
+    snapshot.forEach((data)=>{
+
+
+        let seatNumber = data.id;
+
+        let seatButton = [...seats]
+        .find(seat=>seat.innerText == seatNumber);
+
+
+        if(seatButton){
+
+
+            if(data.data().booked === true){
+
+                seatButton.classList.add("booked");
+
+                seatButton.disabled = true;
+
+            }
+
+            else{
+
+                seatButton.classList.remove("booked");
+
+                seatButton.disabled = false;
+
+            }
+
+
+        }
+
+
+    });
+
+
+});
+
+
+
+
+// SELECT SEAT
+
+seats.forEach(seat=>{
+
+
+seat.addEventListener("click",()=>{
+
+
+if(seat.classList.contains("booked")){
+
+return;
+
+}
+
+
+
+seats.forEach(s=>{
+
+s.classList.remove("selected");
+
+});
+
+
+
+seat.classList.add("selected");
+
+
+selectedSeat = seat.innerText;
+
+
+
+seatText.innerHTML =
+"Selected Seat: 🪑 "+selectedSeat;
+
+
+
+});
+
+
+});
+
+
+
+
+// CONFIRM BOOKING BUTTON
+
+
+document.getElementById("seatBookingBtn")
+.addEventListener("click",async()=>{
+
+
+if(selectedSeat === null){
+
+alert("Please select a seat");
+
+return;
+
+}
+
+
+
+await updateDoc(
+
+doc(db,"seats",selectedSeat),
+
+{
+
+booked:true
+
+}
+
+);
+
+
+
+alert(
+"✅ Seat "+selectedSeat+" booked!"
+);
+
+
+
+selectedSeat=null;
+
+
+});
+
+
+
+</script>
+
+
+
+
+
+    
 </body>
 </html>       
