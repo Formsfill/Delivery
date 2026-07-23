@@ -1790,6 +1790,31 @@ document.querySelector("footer p:last-child").innerHTML =
 "© "+year+" Qatar Umrah Bus Booking";
 
 
+
+const seatBookingBtn = document.getElementById("seatBookingBtn");
+
+seatBookingBtn.addEventListener("click", async ()=>{
+
+    if(selectedSeat === null){
+
+        showMessage("⚠️ Please select a seat");
+        return;
+
+    }
+
+
+    await updateDoc(doc(db, "seats", selectedSeat), {
+        booked:true
+    });
+
+
+    showMessage("✅ Seat " + selectedSeat + " booked successfully!");
+
+});
+
+
+
+     
 </script>
 <script type="module" src="firebase.js"></script>
 
