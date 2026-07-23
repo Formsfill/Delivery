@@ -1816,8 +1816,113 @@ seatBookingBtn.addEventListener("click", async ()=>{
 
      
 </script>
-<script type="module" src="firebase.js"></script>
+ <script type="module">
 
+import { db } from "./firebase.js";
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+let selectedSeat = null;
+
+const seats = document.querySelectorAll(".seat");
+
+const seatText = document.getElementById("selectedSeat");
+
+
+seats.forEach(seat => {
+
+    seat.addEventListener("click", function(){
+
+        seats.forEach(s=>{
+            s.classList.remove("selected");
+        });
+
+        this.classList.add("selected");
+
+        selectedSeat = this.innerText;
+
+        seatText.innerHTML =
+        "Selected Seat: 🪑 " + selectedSeat;
+
+    });
+
+});
+
+
+const seatBookingBtn = document.getElementById("seatBookingBtn");
+
+
+seatBookingBtn.addEventListener("click", async ()=>{
+
+
+    if(selectedSeat === null){
+
+        showMessage("⚠️ Please select a seat");
+
+        return;
+
+    }
+
+
+    try{
+
+        await updateDoc(
+            doc(db,"seats",selectedSeat),
+            {
+                booked:true
+            }
+        );
+
+
+        showMessage(
+        "✅ Seat "+selectedSeat+" booked successfully!"
+        );
+
+
+    }
+    catch(error){
+
+        console.log(error);
+
+        showMessage(
+        "❌ Booking failed"
+        );
+
+    }
+
+
+});
+
+
+
+function showMessage(message){
+
+
+let popup=document.createElement("div");
+
+popup.innerHTML=message;
+
+popup.style.position="fixed";
+popup.style.bottom="30px";
+popup.style.right="30px";
+popup.style.background="#065f46";
+popup.style.color="white";
+popup.style.padding="18px 25px";
+popup.style.borderRadius="15px";
+popup.style.zIndex="9999";
+
+document.body.appendChild(popup);
+
+
+setTimeout(()=>{
+
+popup.remove();
+
+},4000);
+
+
+}
+
+</script>
 
 </body>
 </html>       
