@@ -102,74 +102,59 @@ seats.forEach(seat=>{
 // BOOK SEAT
 
 bookingBtn.addEventListener("click",async()=>{
+bookingBtn.addEventListener("click", async ()=>{
+
+    let nameInput = document.getElementById("name");
+    let phoneInput = document.getElementById("phone");
+
+
+    if(!nameInput){
+        alert("Name box not found");
+        return;
+    }
+
+
+    let name = nameInput.value.trim();
+    let phone = phoneInput.value.trim();
+
+
+    if(name === ""){
+        alert("Enter your name");
+        return;
+    }
 
 
     if(selectedSeat === null){
-
         alert("Please select a seat");
         return;
-
     }
-
-
-
-    let name =
-    document.getElementById("name").value;
-
-
-    let phone =
-    document.getElementById("phone").value;
-
-
-
-    if(name.trim()===""){
-
-        alert("Enter your name");
-        return;
-
-    }
-
 
 
     try{
 
-
         await setDoc(
             doc(db,"seats",selectedSeat),
             {
-
                 booked:true,
                 name:name,
-                phone:phone,
-                seat:selectedSeat,
-                time:new Date()
-
+                phone:phone
             }
         );
 
 
-
         alert(
-        "✅ Seat "+selectedSeat+" booked by "+name
+        "✅ Seat "+selectedSeat+" booked for "+name
         );
-
-
-        selectedSeat=null;
-
 
 
     }
     catch(error){
 
-
-        console.error(error);
-
-        alert(
-        "❌ Booking failed: "+error.message
-        );
-
+        console.log(error);
+        alert(error.message);
 
     }
 
-
 });
+
+        
