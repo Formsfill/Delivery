@@ -122,3 +122,13 @@ bookingBtn.addEventListener("click", async()=>{
     alert("Name found: "+nameBox.value);
 
 });
+
+
+
+
+
+
+
+document.getElementById("seatBookingBtn").addEventListener("click",()=>{
+    alert("Button is working");
+});
