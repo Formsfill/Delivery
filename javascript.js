@@ -101,60 +101,24 @@ seats.forEach(seat=>{
 
 // BOOK SEAT
 
-bookingBtn.addEventListener("click",async()=>{
-bookingBtn.addEventListener("click", async ()=>{
+bookingBtn.addEventListener("click", async()=>{
 
-    let nameInput = document.getElementById("name");
-    let phoneInput = document.getElementById("phone");
+    let nameBox = document.querySelector("#name");
 
+    console.log("NAME BOX:", nameBox);
 
-    if(!nameInput){
-        alert("Name box not found");
+    if(!nameBox){
+        alert("Name input missing");
         return;
     }
 
+    console.log("NAME:", nameBox.value);
 
-    let name = nameInput.value.trim();
-    let phone = phoneInput.value.trim();
-
-
-    if(name === ""){
-        alert("Enter your name");
+    if(nameBox.value.trim()==""){
+        alert("Please type your name");
         return;
     }
 
-
-    if(selectedSeat === null){
-        alert("Please select a seat");
-        return;
-    }
-
-
-    try{
-
-        await setDoc(
-            doc(db,"seats",selectedSeat),
-            {
-                booked:true,
-                name:name,
-                phone:phone
-            }
-        );
-
-
-        alert(
-        "✅ Seat "+selectedSeat+" booked for "+name
-        );
-
-
-    }
-    catch(error){
-
-        console.log(error);
-        alert(error.message);
-
-    }
+    alert("Name found: "+nameBox.value);
 
 });
-
-        
