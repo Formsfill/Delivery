@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Qatar Umrah Bus | Makkah Journey</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+
+/* HEADER */
+
+header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#065f46;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+
+.logo{
+
+    color:white;
+    font-size:28px;
+    font-weight:700;
+
+}
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+
+nav a:hover{
+
+    color:#facc15;
+
+}
+
+
+
+/* HERO */
+
+
+.hero{
+
+    min-height:90vh;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,95,70,.55)
+    ),
+
+    url("https://images.unsplash.com/photo-1548013146-72479768bada");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+.hero h1{
+
+    font-size:60px;
+    animation:show 1s;
+
+}
+
+
+.hero p{
+
+    font-size:22px;
+    margin:20px 0;
+
+}
+
+
+.hero button{
+
+    padding:16px 40px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#facc15;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.hero button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 30px #facc15;
+
+}
+
+
+
+/* SECTIONS */
+
+
+section{
+
+    padding:80px 8%;
+
+}
+
+
+.title{
+
+    text-align:center;
+
+    font-size:38px;
+
+    color:#065f46;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* BOOKING */
+
+
+.booking-box{
+
+    max-width:750px;
+
+    background:white;
+
+    padding:35px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+input,select{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+}
+
+
+.submit-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    background:#065f46;
+
+    color:white;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+.submit-btn:hover{
+
+    background:#047857;
+
+}
+
+
+
+/* SEATS */
+
+
+.seat-container{
+
+    max-width:500px;
+
+    background:white;
+
+    padding:35px;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+.driver{
+
+    background:#111827;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.seats{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,80px);
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+
+.seat{
+
+    height:70px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#22c55e;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.seat:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+.seat.selected{
+
+    background:#2563eb;
+
+}
+
+
+.seat.booked{
+
+    background:#dc2626;
+
+    cursor:not-allowed;
+
+}
+
+
+
+/* CARDS */
+
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+transform:translateY(-50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
+
+@media(max-width:800px){
+
+
+header{
+
+flex-direction:column;
+
+}
+
+
+nav{
+
+margin-top:15px;
+
+}
+
+
+nav a{
+
+display:inline-block;
+
+margin:5px;
+
+}
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.title{
+
+font-size:30px;
+
+}
+
+
+}
+  
+  
+  /* ROUTE DESIGN */
+
+.route-box{
+
+max-width:800px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+.location{
+
+text-align:center;
+padding:20px;
+
+}
+
+
+.location .icon{
+
+font-size:45px;
+margin-bottom:10px;
+
+}
+
+
+.location h3{
+
+color:#065f46;
+font-size:25px;
+
+}
+
+
+.location p{
+
+color:#64748b;
+margin-top:8px;
+
+}
+
+
+
+.line{
+
+height:80px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:#065f46;
+font-size:30px;
+font-weight:bold;
+
+}
+
+
+.line span{
+
+height:20px;
+width:4px;
+background:#065f46;
+
+}
+
+
+
+.makkah{
+
+background:#ecfdf5;
+border-radius:20px;
+
+}
+
+
+
+@media(max-width:600px){
+
+.route-box{
+
+padding:20px;
+
+}
+
+.location h3{
+
+font-size:22px;
+
+}
+
+}
+
+  
+  
+  /* BUS SEAT DESIGN */
+
+.bus-container{
+
+max-width:550px;
+margin:auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:30px;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.12);
+
+border:5px solid #e2e8f0;
+
+}
+
+
+.bus-top{
+
+background:#1e293b;
+
+color:white;
+
+padding:15px;
+
+border-radius:15px;
+
+text-align:center;
+
+font-weight:bold;
+
+margin-bottom:30px;
+
+}
+
+
+.bus-layout{
+
+display:grid;
+
+grid-template-columns:repeat(2,90px);
+
+gap:18px;
+
+justify-content:center;
+
+}
+
+
+
+.seat{
+
+height:75px;
+
+border:none;
+
+border-radius:18px;
+
+background:#22c55e;
+
+color:white;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+position:relative;
+
+transition:.3s;
+
+}
+
+
+.seat::after{
+
+content:"";
+
+position:absolute;
+
+bottom:8px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:35px;
+
+height:8px;
+
+background:white;
+
+border-radius:10px;
+
+opacity:.7;
+
+}
+
+
+
+.seat:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+.seat.selected{
+
+background:#2563eb;
+
+}
+
+
+
+.seat.booked{
+
+background:#ef4444;
+
+cursor:not-allowed;
+
+}
+
+
+
+.seat-status{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-top:30px;
+
+font-weight:600;
+
+}
+
+
+
+.seat-status span{
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+display:inline-block;
+
+}
+
+
+
+.available{
+
+background:#22c55e;
+
+}
+
+
+.selected-color{
+
+background:#2563eb;
+
+}
+
+
+.booked-color{
+
+background:#ef4444;
+
+}
+
+
+
+#selectedSeat{
+
+text-align:center;
+
+margin-top:25px;
+
+color:#065f46;
+
+}
+
+
+
+@media(max-width:500px){
+
+.bus-layout{
+
+grid-template-columns:repeat(2,70px);
+
+}
+
+
+.seat{
+
+height:65px;
+
+}
+
+}
+  
+  
+  /* PRICING SECTION */
+
+.pricing-container{
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+
+}
+
+
+.price-card{
+
+    background:white;
+
+    padding:35px 30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+    position:relative;
+
+    transition:.4s;
+
+    overflow:hidden;
+
+}
+
+
+.price-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:6px;
+
+    background:#065f46;
+
+}
+
+
+
+.price-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.15);
+
+}
+
+
+
+/* SVG ICON */
+
+.price-icon{
+
+    width:90px;
+    height:90px;
+
+    margin:0 auto 20px;
+
+    background:#ecfdf5;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.price-icon svg{
+
+    width:55px;
+    height:55px;
+
+}
+
+
+
+/* TITLE */
+
+.price-card h3{
+
+    color:#065f46;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.price-card h1{
+
+    font-size:45px;
+
+    color:#f59e0b;
+
+    margin:15px 0;
+
+}
+
+
+
+.price-card p{
+
+    color:#64748b;
+
+}
+
+
+
+/* FEATURES */
+
+.price-card ul{
+
+    list-style:none;
+
+    text-align:left;
+
+    margin:25px 0;
+
+    line-height:2;
+
+}
+
+
+.price-card li{
+
+    font-size:15px;
+
+}
+
+
+
+/* BUTTON */
+
+.price-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#065f46;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.price-card button:hover{
+
+    background:#047857;
+
+    transform:scale(1.03);
+
+}
+
+
+
+/* POPULAR CARD */
+
+.price-card.popular{
+
+    border:3px solid #facc15;
+
+    transform:scale(1.05);
+
+}
+
+
+
+.price-card.popular::before{
+
+    background:#facc15;
+
+}
+
+
+
+.badge{
+
+    position:absolute;
+
+    top:15px;
+
+    right:-35px;
+
+    background:#facc15;
+
+    color:#111;
+
+    padding:8px 45px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transform:rotate(45deg);
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .price-card.popular{
+
+        transform:none;
+
+    }
+
+
+    .price-card h1{
+
+        font-size:38px;
+
+    }
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+🚌 Qatar Umrah Bus
+
+</div>
+
+
+<nav>
+
+<a href="#home">Home</a>
+
+<a href="#booking">Book</a>
+
+<a href="#seats">Seats</a>
+
+<a href="#schedule">Schedule</a>
+
+<a href="#route">Route</a>
+
+<a href="#pricing">Pricing</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#faq">FAQ</a>
+
+</nav>
+
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+
+<div>
+
+<h1>
+🕋 Qatar To Makkah
+</h1>
+
+
+<p>
+Comfortable 15 Seat Umrah Bus Journey
+</p>
+
+
+<button onclick="location.href='#booking'">
+Book Now
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+<section id="booking">
+
+
+<h2 class="title">
+🚌 Book A Seat
+</h2>
+
+
+<div class="booking-box">
+
+
+<input id="name" placeholder="Full Name">
+
+
+<input id="phone" placeholder="Phone Number">
+
+
+<input placeholder="Passport Number">
+
+
+<input type="date">
+
+
+<select>
+
+<option>Pickup Location</option>
+
+<option>Doha</option>
+
+<option>Al Rayyan</option>
+
+<option>Al Wakrah</option>
+
+</select>
+
+
+<button class="submit-btn">
+Confirm Booking
+</button>
+
+
+</div>
+
+
+</section>
+  
+  <section id="seats">
+
+<h2 class="title">
+💺 Select Your Seat
+</h2>
+
+
+<div class="bus-container">
+
+<div class="bus-top">
+🚍 DRIVER
+</div>
+
+
+<div class="bus-layout">
+
+
+<button class="seat booked">1</button>
+<button class="seat">2</button>
+
+
+<button class="seat">3</button>
+<button class="seat">4</button>
+
+
+<button class="seat">5</button>
+<button class="seat">6</button>
+
+
+<button class="seat">7</button>
+<button class="seat">8</button>
+
+
+<button class="seat">9</button>
+<button class="seat">10</button>
+
+
+<button class="seat">11</button>
+<button class="seat">12</button>
+
+
+<button class="seat">13</button>
+<button class="seat">14</button>
+
+
+<button class="seat">15</button>
+
+
+</div>
+
+
+<div class="seat-status">
+
+<span class="available"></span> Available
+
+<span class="selected-color"></span> Selected
+
+<span class="booked-color"></span> Booked
+
+</div>
+
+
+<h3 id="selectedSeat">
+No Seat Selected
+</h3>
+
+
+</div>
+
+</section>
+  
+
+
+<section id="schedule">
+
+
+<h2 class="title">
+📅 Trip Schedule
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Monday</h3>
+
+<p>
+🕗 Departure: 8:00 PM
+</p>
+
+<p>
+Arrival: Next Morning
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Thursday</h3>
+
+<p>
+🕗 Departure: 8:00 PM
+</p>
+
+<p>
+Arrival: Next Morning
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Journey Time</h3>
+
+<p>
+⏱️ 10 - 12 Hours
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="route">
+
+<h2 class="title">
+📍 Our Journey Route
+</h2>
+
+<div class="route-box">
+
+<div class="location">
+
+<div class="icon">
+🇶🇦
+</div>
+
+<h3>Qatar</h3>
+
+<p>
+Starting Point
+<br>
+Doha Pickup Locations
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="location">
+
+<div class="icon">
+🛂
+</div>
+
+<h3>Abu Samra Border</h3>
+
+<p>
+Qatar - Saudi Border
+<br>
+Passport & Customs Check
+</p>
+
+</div>
+
+
+
+<div class="line">
+
+<span></span>
+⬇
+<span></span>
+
+</div>
+
+
+
+<div class="location">
+
+<div class="icon">
+🇸🇦
+</div>
+
+<h3>Saudi Arabia</h3>
+
+<p>
+Journey Through Saudi Roads
+<br>
+Comfortable Travel Stops
+</p>
+
+</div>
+
+
+
+<div class="line">
+
+<span></span>
+⬇
+<span></span>
+
+</div>
+
+
+
+<div class="location makkah">
+
+<div class="icon">
+🕋
+</div>
+
+<h3>Makkah</h3>
+
+<p>
+Final Destination
+<br>
+Umrah Pilgrimage
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+<section id="pricing">
+
+<h2 class="title">
+💰 Umrah Bus Packages
+</h2>
+
+
+<div class="pricing-container">
+
+
+<div class="price-card">
+
+<div class="price-icon">
+
+<!-- Adult SVG -->
+<svg width="70" height="70" viewBox="0 0 100 100">
+<circle cx="50" cy="30" r="18" fill="#065f46"/>
+<path d="M20 90 Q50 45 80 90" fill="#065f46"/>
+</svg>
+
+</div>
+
+<h3>Adult Package</h3>
+
+<h1>250 QAR</h1>
+
+<p>Per Person</p>
+
+<ul>
+<li>✔ Comfortable Seat</li>
+<li>✔ Air Conditioned Bus</li>
+<li>✔ Luggage Space</li>
+<li>✔ Rest Stops</li>
+<li>✔ Umrah Travel Support</li>
+</ul>
+
+<button>Book Now</button>
+
+</div>
+
+
+
+
+
+<div class="price-card popular">
+
+
+<div class="badge">
+Most Popular
+</div>
+
+
+<div class="price-icon">
+
+<!-- Family SVG -->
+<svg width="80" height="70" viewBox="0 0 120 100">
+
+<circle cx="60" cy="25" r="15" fill="#065f46"/>
+
+<circle cx="25" cy="35" r="12" fill="#065f46"/>
+
+<circle cx="95" cy="35" r="12" fill="#065f46"/>
+
+
+<path d="M40 90 Q60 45 80 90" fill="#065f46"/>
+
+<path d="M5 90 Q25 55 45 90" fill="#065f46"/>
+
+<path d="M75 90 Q95 55 115 90" fill="#065f46"/>
+
+</svg>
+
+</div>
+
+
+
+<h3>Family Package</h3>
+
+<h1>900 QAR</h1>
+
+<p>Up to 4 People</p>
+
+
+<ul>
+<li>✔ Reserved Seats</li>
+<li>✔ Family Seating</li>
+<li>✔ Extra Luggage</li>
+<li>✔ Priority Booking</li>
+<li>✔ Travel Assistance</li>
+</ul>
+
+
+<button>Book Family</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="price-card">
+
+
+<div class="price-icon">
+
+<!-- Child SVG -->
+
+<svg width="70" height="70" viewBox="0 0 100 100">
+
+<circle cx="50" cy="30" r="15" fill="#065f46"/>
+
+<path d="M30 90 Q50 50 70 90" fill="#065f46"/>
+
+</svg>
+
+
+</div>
+
+
+<h3>Child Package</h3>
+
+
+<h1>180 QAR</h1>
+
+
+<p>Age 5 - 11 Years</p>
+
+
+<ul>
+<li>✔ Comfortable Seat</li>
+<li>✔ Safety Support</li>
+<li>✔ Luggage Allowed</li>
+<li>✔ Same Journey Benefits</li>
+</ul>
+
+
+<button>Book Now</button>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section id="contact">
+
+
+<h2 class="title">
+📞 Contact Us
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+📱 Phone
+</h3>
+
+<p>
++974 5000 0000
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+💬 WhatsApp
+</h3>
+
+<p>
++974 5000 0000
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+📧 Email
+</h3>
+
+<p>
+info@qatarumrahbus.com
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+  
+ <script>
+
+// ==========================
+// Seat Selection System
+// ==========================
+
+let selectedSeat = null;
+
+const seats = document.querySelectorAll(".seat:not(.booked)");
+
+const seatText = document.getElementById("selectedSeat");
+
+
+seats.forEach(seat => {
+
+    seat.addEventListener("click", function(){
+
+        // Remove previous selection
+        seats.forEach(s=>{
+            s.classList.remove("selected");
+        });
+
+
+        // Select current seat
+        this.classList.add("selected");
+
+
+        selectedSeat = this.innerText;
+
+
+        seatText.innerHTML =
+        "Selected Seat: 🪑 " + selectedSeat;
+
+
+    });
+
+});
+
+
+
+// ==========================
+// Booking Validation
+// ==========================
+
+const bookingButton = document.querySelector(".submit-btn");
+
+
+bookingButton.addEventListener("click",()=>{
+
+
+let name = document.getElementById("name").value;
+
+let phone = document.getElementById("phone").value;
+
+
+
+if(name.trim()===""){
+
+showMessage("⚠️ Please enter your name");
+
+return;
+
+}
+
+
+if(phone.trim()===""){
+
+showMessage("⚠️ Please enter your phone number");
+
+return;
+
+}
+
+
+
+if(selectedSeat===null){
+
+showMessage("⚠️ Please select a seat");
+
+return;
+
+}
+
+
+
+showMessage(
+"✅ Booking Confirmed! Seat "+selectedSeat+
+" reserved for "+name
+);
+
+
+
+});
+
+
+
+// ==========================
+// Notification Popup
+// ==========================
+
+function showMessage(message){
+
+
+let popup=document.createElement("div");
+
+
+popup.innerHTML=message;
+
+
+popup.style.position="fixed";
+
+popup.style.bottom="30px";
+
+popup.style.right="30px";
+
+popup.style.background="#065f46";
+
+popup.style.color="white";
+
+popup.style.padding="18px 25px";
+
+popup.style.borderRadius="15px";
+
+popup.style.fontWeight="bold";
+
+popup.style.boxShadow="0 10px 30px rgba(0,0,0,.3)";
+
+popup.style.zIndex="9999";
+
+popup.style.animation="show .5s";
+
+
+
+document.body.appendChild(popup);
+
+
+
+setTimeout(()=>{
+
+popup.remove();
+
+},4000);
+
+
+
+}
+
+
+
+
+// ==========================
+// Scroll Animation
+// ==========================
+
+
+const observer = new IntersectionObserver(entries=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+
+});
+
+
+});
+
+
+
+document.querySelectorAll(".card,.booking-box,.seat-container")
+.forEach(element=>{
+
+
+element.style.opacity="0";
+
+element.style.transform="translateY(40px)";
+
+element.style.transition="0.8s";
+
+
+observer.observe(element);
+
+
+});
+
+
+
+// ==========================
+// Current Year
+// ==========================
+
+let year = new Date().getFullYear();
+
+document.querySelector("footer p:last-child").innerHTML =
+"© "+year+" Qatar Umrah Bus Booking";
+
+
+</script>
+
+
+</body>
+</html>       
