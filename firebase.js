@@ -13,8 +13,8 @@
     projectId: "arafiz-9a4d4",
     storageBucket: "arafiz-9a4d4.firebasestorage.app",
     messagingSenderId: "120289928910",
-    appId: "1:120289928910:web:33494aaea1dd88ff9f529f",
-    measurementId: "G-3C49F7EJ5T"
+    appId: "1:120289928910:web:23eb192ca977e9e49f529f",
+    measurementId: "G-ZR0S7EP1YE"
   };
 
   // Initialize Firebase
