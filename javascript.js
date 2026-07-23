@@ -77,8 +77,10 @@ bookingBtn.addEventListener("click", async () => {
     try {
 
         await updateDoc(doc(db, "seats", selectedSeat), {
-            booked: true
-        });
+    booked: true,
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value
+});
 
         alert("Seat " + selectedSeat + " booked successfully!");
 
