@@ -13,10 +13,11 @@ const bookingBtn = document.getElementById("seatBookingBtn");
 // Load booked seats from Firebase
 onSnapshot(collection(db, "seats"), (snapshot) => {
 
-    // Reset all seats
+    // Reset seats
     seats.forEach(seat => {
         seat.classList.remove("booked");
         seat.disabled = false;
+        seat.innerHTML = seat.getAttribute("data-seat") || seat.innerText;
     });
 
     snapshot.forEach((seatDoc) => {
@@ -26,20 +27,27 @@ onSnapshot(collection(db, "seats"), (snapshot) => {
 
         seats.forEach((seat) => {
 
-            if (seat.innerText.trim() === seatId) {
+            if (seat.innerText.split("\n")[0].trim() === seatId) {
 
                 if (data.booked) {
-    seat.classList.add("booked");
-    seat.disabled = true;
 
-    if (data.name) {
-        seat.title = "Booked by: " + data.name;
-    }
-} else {
-    seat.classList.remove("booked");
-    seat.disabled = false;
-    seat.title = "";
-}
+                    seat.classList.add("booked");
+                    seat.disabled = true;
+
+                    seat.innerHTML = `
+                        ${seatId}<br>
+                        <small>${data.name || ""}</small>
+                    `;
+
+                }
+
+            }
+
+        });
+
+    });
+
+});
 
                     if (seat.classList.contains("selected")) {
                         seat.classList.remove("selected");
