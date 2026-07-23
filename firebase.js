@@ -8,6 +8,44 @@ import {
   collection
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+
+
+
+onSnapshot(collection(db, "seats"), (snapshot) => {
+
+    snapshot.forEach((seatDoc) => {
+
+        const seatId = seatDoc.id;
+        const data = seatDoc.data();
+
+        document.querySelectorAll(".seat").forEach((btn) => {
+
+            if (btn.innerText === seatId) {
+
+                if (data.booked) {
+                    btn.classList.add("booked");
+                    btn.disabled = true;
+                } else {
+                    btn.classList.remove("booked");
+                    btn.disabled = false;
+                }
+
+            }
+
+        });
+
+    });
+
+});
+
+
+
+
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
