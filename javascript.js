@@ -102,33 +102,34 @@ seats.forEach(seat=>{
 // BOOK SEAT
 
 bookingBtn.addEventListener("click", async()=>{
+bookingBtn.addEventListener("click", async()=>{
 
     let nameBox = document.querySelector("#name");
-
-    console.log("NAME BOX:", nameBox);
 
     if(!nameBox){
         alert("Name input missing");
         return;
     }
 
-    console.log("NAME:", nameBox.value);
 
     if(nameBox.value.trim()==""){
         alert("Please type your name");
         return;
     }
 
-    alert("Name found: "+nameBox.value);
 
-});
-
-
-
-
+    if(!selectedSeat){
+        alert("Please select a seat");
+        return;
+    }
 
 
+    await setDoc(doc(db,"seats",selectedSeat),{
+        booked:true,
+        name:nameBox.value.trim()
+    });
 
-document.getElementById("seatBookingBtn").addEventListener("click",()=>{
-    alert("Button is working");
+
+    alert("Seat booked successfully!");
+
 });
